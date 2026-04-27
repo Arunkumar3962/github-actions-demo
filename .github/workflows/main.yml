@@ -1,0 +1,13 @@
+name: CI Example
+on: [push] # Triggers the workflow on every push to the repository
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # The type of runner (virtual machine) to use
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Standard action to clone your repo into the runner
+
+      - name: Setup Docker
+      uses: Docker/Setup-buildx-action@v4
+        run: echo "Hello, GitHub Actions!" # Executes a shell command
